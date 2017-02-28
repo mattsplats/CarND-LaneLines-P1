@@ -3,7 +3,7 @@
 
 ### Description
 
-I constructed an image processing pipeline to draw a single line for each lane using the OpenCV computer vision and numpy Python libraries, and apply this pipeline to video files as image sequences.  My pipeline consists of 7 steps:
+I constructed an image processing pipeline to draw a single line for each lane using the OpenCV computer vision and numpy Python libraries, and applied this pipeline to video files as image sequences.  My pipeline consists of 7 steps:
 * **Conversion to grayscale:** I used OpenCV's image import, which outputs BGR instead of RGB colors.  Thus, the parameter COLOR_BGR2GRAY was used.
 
 ![Grayscale](./writeup/grayscale.jpg)
