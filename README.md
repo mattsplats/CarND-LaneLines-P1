@@ -1,16 +1,9 @@
-# **Finding Lane Lines on the Road** 
+#**Finding Lane Lines on the Road** 
 
----
-
-The goals / steps of this project are the following:
-* Make a pipeline that finds lane lines on the road
-* Reflect on your work in a written report
-
----
 
 ### Description
 
-I constructed a pipeline to draw a single line for each lane, consisting of 7 steps:
+I constructed an image processing pipeline to draw a single line for each lane using the OpenCV computer vision and numpy Python libraries, and apply this pipeline to video files as image sequences.  My pipeline consists of 7 steps:
 * **Conversion to grayscale:** I used OpenCV's image import, which outputs BGR instead of RGB colors.  Thus, the parameter COLOR_BGR2GRAY was used.
 
 ![Grayscale](./writeup/grayscale.jpg)
@@ -34,9 +27,9 @@ I constructed a pipeline to draw a single line for each lane, consisting of 7 st
 
 * **Image composition:** the two lines were drawn over the original image and the composite image was returned.
 
-![Final](./writeup/lineset.jpg)
+![Final](./writeup/final.jpg)
 
-A color selection pass was added in later versions to attempt to improve worst-case output, but ended up reducing overall performance and was not used in the final version.  OpenCV's histogram equalization http://docs.opencv.org/3.1.0/d5/daf/tutorial_py_histogram_equalization.html was also added in an attempt to improve contrast prior to processing, but did not appear to produce any improvements.
+A color selection pass was added in later versions to attempt to improve worst-case output, but ended up reducing overall performance and was not used in the final version.  OpenCV's histogram equalization (http://docs.opencv.org/3.1.0/d5/daf/tutorial_py_histogram_equalization.html) was also added in an attempt to improve contrast prior to processing, but did not appear to produce any improvements.
 
 I ended up choosing less restrictive parameters for both Canny edge detection and Hough transform, in order to improve worst-case output.  This did end up creating additional Hough lines that were not representative of the lane lines, but the final output did not seem to be adversly affected.
 
